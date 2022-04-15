@@ -1,0 +1,66 @@
+user,created_at,lang,like_count,quote_count,reply_count,retweet_count,tweet,url
+bharat_builder,2021-01-12 03:18:07+00:00,en,1,0,0,1,"The Million Song Dataset - Science Concludes Modern Music Too Loud, All Sounds The Same | Science 2.0 https://t.co/cD3IG5ERF0 via @science2_0",https://www.science20.com/science_20/million_song_dataset_science_concludes_modern_music_too_loud_all_sounds_same-92614
+mauridb,2021-02-09 16:20:23+00:00,en,2,0,0,0,@retracement @BuckWoodyMSFT Take a look at the sample with the Million Song dataset that @arvisam but together: https://t.co/qnBq1WhTBi,https://docs.microsoft.com/en-us/samples/azure-samples/millionsongdataset-sql/millionsongdataset-sql/
+guyshomenet,2021-02-04 22:02:46+00:00,en,0,0,0,0,"No surprise.
+
+""An AI study done in Spain, the Million Song Dataset, looked at nearly half a million songs from the 1950s to 2010, and concluded that contemporary pop music is indeed louder, less diverse, and more basic than it has ever been."" https://t.co/tIvR1LOhiW",https://www.quora.com/How-has-such-HORRIBLE-music-become-the-norm-these-days/answer/Peter-Losh?ch=2&share=b9808aba&srid=uU0Uy
+codexoriginal,2021-03-21 16:23:54+00:00,und,0,0,0,0,https://t.co/LMzegmJnzD #codex,https://medium.com/codex/ravdess-emotional-speech-and-song-dataset-an-analysis-eabe687817df
+Ritmonegro,2021-03-21 12:24:01+00:00,en,0,0,0,0,"“RAVDESS Emotional Speech and Song dataset: an analysis” by Tracyrenee
+https://t.co/Ku55JD5Nof",https://medium.com/codex/ravdess-emotional-speech-and-song-dataset-an-analysis-eabe687817df?source=twitterShare-711db9270a71-1616329440
+DataScience_b,2021-03-20 17:20:33+00:00,en,1,0,0,0,"I built a Naive Bayes model to predict genre from song lyrics and i... (Medium)
+
+If you're into music and data, then the Million Song Dataset is a pretty awesome resource.
+
+Add your highlights:
+https://t.co/KYsfLrvvod
+ #data #science #datasc...",https://briefly.co/anchor/Data_science/story/i-built-a-naive-bayes-model-to-predict-genre-from-song-lyrics-and-it-went-ok-ish?f=gravlax&utm_source=Twitter&utm_medium=autotweet&utm_content=unhighlighted&utm_campaign=Data_science
+DataScience_b,2021-03-20 17:20:05+00:00,en,1,0,0,1,"Naive Bayes, Song Lyrics and Genre (towardsdatascienc...)
+
+If you're into music and data, then the Million Song Dataset is a pretty awesome resource.
+
+Add your highlights:
+https://t.co/J00U1HBfrq
+ #data #science #datasc...",https://briefly.co/anchor/Data_science/story/naive-bayes-song-lyrics-and-genre?f=gravlax&utm_source=Twitter&utm_medium=autotweet&utm_content=unhighlighted&utm_campaign=Data_science
+JanneSpijkervet,2021-03-19 14:43:37+00:00,en,2,0,1,0,"Lastly, we show that CLMR generalises to out-of-domain datasets by pre-training it on entirely different music datasets. Pre-training is performed on the Million Song Dataset, FMA, Billboard and GTZAN separately and linear evaluation is performed on the MagnaTagATune dataset. https://t.co/pIVsiKxSOt",
+JanneSpijkervet,2021-03-19 14:43:35+00:00,en,1,0,1,0,"When fine-tuning the linear classifier (only!) using the self-supervised learned representations on 1% of the labels (= 259 songs for MagnaTagATune), it still achieves 33.1% AP. CLMR shows a similar result for the Million Song Dataset until ~24.000 songs (10% of the labels). https://t.co/JXO3Niz0Qp",
+JanneSpijkervet,2021-03-19 14:43:34+00:00,en,1,0,1,0,"A linear classifier trained on our self-supervised representations matches fully supervised SampleCNN on the MagnaTagATune dataset (our average precision is 35.4% vs. 34.4% for supervised training). On the Million Song Dataset, our results are competitive to supervised models. https://t.co/QgkVHCoQdG",
+abunchofdata,2021-03-13 14:45:03+00:00,en,1,0,0,0,Million Song Dataset on AWS is deprecated #machinelearning #abunchofdata https://t.co/R6X0ztt97f,https://buff.ly/2OrxNFv
+watermelonONK,2021-04-08 13:02:14+00:00,ru,31,1,22,6,"Испанские ученые пришли к выводу, что популярная музыка деградирует. За последние полвека она стала проще, унылее и громче.
+Анализ испанских исследователей был основан базе данных Million Song Dataset. 
+Вот я не ученый... https://t.co/hJ3Gu0gZDJ",
+tiagosr,2021-06-05 18:29:44+00:00,pt,1,0,0,0,"@vamoss @brunomoreschi MNIST, Leeds Sports Pose, Visual Genome, Million Song Dataset, Google Books N-Grams? Confesso que só o MNIST me surgiu num primeiro momento
+
+@vamoss acho que alguns dos que vc mencionou são modelos, ao invés de datasets", 
+anat_gilboa,2021-06-03 13:52:01+00:00,en,5,0,1,0,"having worked with the million song dataset &amp; @echonest for my thesis in genre classification, “bedroom pop” is a new one for me 🤔 💃 https://t.co/Qv9ZV060wy",
+nicholdav,2021-07-14 15:32:10+00:00,en,3,0,1,0,"Jim Pavarski updating us on Awkward Array
+https://t.co/7dTfh8fP1d
+
+cool example w/getting intervals from Million Song Dataset (👀 cc @functiontelechy )
+
+- starting 3-year project funded by @NSF to ensure works for many use cases https://t.co/HYIH18Ilbn",https://awkward-array.readthedocs.io/en/latest/
+dddvdgaarunara,2021-08-22 09:12:47+00:00,ja,0,0,1,0,"そして、優れた曲であるということは、多くの支持を集め、50年後にも残っているような名曲となり、Million Song Datasetに収録されるような曲になる可能性も高くなります。
+
+つまり、Million Song Datasetに収録されている古い楽曲は「音色が多様でピッチも幅広い」という、", 
+dddvdgaarunara,2021-08-22 09:12:44+00:00,ja,0,0,1,0,Million Song Datasetの収録楽曲のうち、1955年から1959年にかけてリリースされたものは2650曲であるのに対し、2005年から2009年にかけてリリースされたものはなんと17万7808曲で、同じ5年間でも明らかに収録数が異なることがわかります。, 
+dddvdgaarunara,2021-08-22 09:12:42+00:00,ja,0,0,1,0,音色・ピッチ・音量という3つの要素で、ポピュラー音楽は良好な変化がみられていないように感じられますが、研究で使用されたデータセットのMillion Song Datasetは、収録楽曲に偏りがあるため、選択バイアスがかかっているのではと科学雑誌のScientific Americanが指摘しています。, 
+iamreddave,2021-09-18 20:22:42+00:00,en,1,0,0,0,@vitriolamusic The remix is the loudest album ever made. I made a graph of the million song dataset and it jumps out, 
+keunwoochoi,2021-10-29 21:44:52+00:00,en,0,0,1,0,"📄6. Semi-supervised Music Tagging Transformer
+https://t.co/CqPWJrU5bL
+
+- Use Conv + Transformer architecture and win!
+- Improve the performance by semi-supervised learning
+- Propose a new, artist-isolating split of million song dataset",https://archives.ismir.net/ismir2021/paper/000096.pdf
+MichealReilly,2021-10-21 16:36:59+00:00,en,0,0,2,0,"@b3nharris @thomasforth Would totally disagree, french rap is generally well recieved in the random smattering of european counteries I have lived or being in
+Dataset is me going to some parties or hearing what people exclaim in positive sense what is that song, dataset totally legit &amp; not anecdate 😀", 
+ndaural,2021-11-23 00:40:44+00:00,en,2,0,0,0,Sorry I haven't been keeping up with the writing! I've been distracted because I'm trying to understand this timbre analysis in the million song dataset. It looks at every beat of a song and checks how similar each one is to these 12 profiles but what is #8 looking for? https://t.co/eBt0lkAzkf,
+daizo3,2021-11-20 14:58:00+00:00,ja,0,0,0,0,あと、Million Song Dataset も。, 
+LeonieKrempien,2021-11-15 06:38:14+00:00,en,0,0,0,0,"@Komaniecki_R The original tweet was deleted but let me guess - Somebody did unspeakable things to the million song dataset to ""scientifically"" prove that ""popular music bad"" huh?", 
+ReneeStephen,2021-11-15 05:16:50+00:00,en,1,0,0,0,"@BrianRoemmele @hashtagagitated I was asking about the ones that HashtagAgitated listed, I understand the premise here -- but I would be interested in a meta-analysis of the Million Song Dataset wrt volume of plays and number of listeners in total. The long tail is longer and the audience much bigger now.", 
+Nonwrestler,2021-11-15 05:09:24+00:00,en,0,0,1,0,"@Deve_Dy @BrianRoemmele the thing on my mind is not about the analysis, but the starting set. I can't find anything about how the one million song dataset was created, but there's no indication that it is based on relative popularity.", 
+Nonwrestler,2021-11-15 05:04:28+00:00,en,0,0,0,0,"At least, I can't see anything about how the songs in that million song dataset are chosen. I think you have to read it as ""popular music"" not music that is popular.", 
+HyzerBlade,2021-11-15 04:57:27+00:00,en,5,0,0,0,"@its_adamneely @BrianRoemmele The paper doesn't define individual tone complexity, so its probably referring to the homogenization of timbral pallette.
+However a million song dataset can't possibly capture the music landscape of the past few decades", 
+ReneeStephen,2021-11-15 04:43:02+00:00,en,0,0,0,0,"@lithohedron The Million Song Dataset uses profile data from streaming services and https://t.co/0sRvteTGeM, so... maybe, but needs more analysis along that hypothesis I think.",http://Last.fm
+Nonwrestler,2021-11-15 04:39:09+00:00,en,0,0,0,0,"@CipherKnot @nanostern @BrianRoemmele I'd be interested to know what's in the subset of The Million Song Dataset that it's based on. The research says ""recordings span a variety of popular genres, including rock, pop, hip hop, metal, or electronic""", 
+momack28,2021-11-12 20:14:12+00:00,en,0,0,1,0,"@cory_eth @freeslugs @pinatacloud @Filecoin this million song dataset, which is stored on @Filecoin, is 280 GB: https://t.co/oudMdxCTQZ",http://millionsongdataset.com/
+manishxrajani,2021-12-14 17:28:22+00:00,en,7,0,1,0,"@rahulchhabra07 We made a NodeJS app and used it to make calls to the Spotify API, took the user's last few played songs and ran KNN to recommend songs (from the 1.3L song dataset we made from scraping Spotify+appending some existing datasets) on the basis of Spotify audio analysis features", 
