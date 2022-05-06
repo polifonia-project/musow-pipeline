@@ -251,7 +251,26 @@ def twitter_search(token, keyword, start, end, mresults, mcount, file_name):
     #pickle df for reuse
     df.to_pickle(f'{path}TWITTER_SEARCHES/RAW_SEARCHES/{file_name}.pkl')
 
-def scrape_links(link_list):
+def scrape_links(link_list, pred_df, filename):
+    """ Scrape links from classified tweets, save scrapes, combine them w/ tweets and return a DF for description classification.
+    
+    Parameters
+    ----------
+    p_input: 
+        dataframe of the prediction set
+    p_feature: 
+        df column, text of tweet or description of the resource
+    filename: str
+        model file name
+    path: str
+        parent folder
+    score: int
+        which prediction score to filter the results by 1/0
+    discard: variable
+        a list of terms to check against to remove tweets
+    filter: str 
+        a string against which to further filter predictions 
+    """
     links = pd.DataFrame(columns=['Title', 'Description', 'URL'])
     summarizer = pipeline("summarization", model='sshleifer/distilbart-cnn-12-6')
     
@@ -321,7 +340,10 @@ def scrape_links(link_list):
     discard = ['None', '! D O C T Y P E h t m l >', '! d o c t y p e h t m l >', '! D O C T Y P E H T M L >']
     links = links.fillna('None')
     links = links[~links.Description.str.contains('|'.join(discard))]
-    return links
+    twitter_scrapes_preds = pd.merge(pred_df, links, on='URL')
+    twitter_scrapes_preds.to_pickle(f'{path}LOGREG_RELEVANCE/SCRAPES/{filename}.pkl')
+    print(len(twitter_scrapes_preds))
+    return twitter_scrapes_preds
 
 def twitter_predictions(path, filename, p_input, p_feature, score, discard, filter):
     """ Predict relevant tweets using a pickled model based on Logistic regression and TF-IDF.
@@ -386,6 +408,7 @@ def resource_predictions(path, filename, p_input, p_feature, score, discard, sav
     preds = preds[~preds.Title.str.contains('|'.join(discard))]
     preds = preds.sort_values(by='Score', ascending=False).reset_index(drop=True)
     preds.to_csv(f'{path}LOGREG_RELEVANCE/PREDICTIONS/{savefile}.csv')
+    print(preds)
     return preds
 
 def tweets_to_classify(path, filetype):   
