@@ -306,7 +306,7 @@ def scrape_links(link_list):
                 for chunk_id in range(len(chunks)):
                     chunks[chunk_id] = ' '.join(chunks[chunk_id])
                 try:
-                    res = summarizer(chunks, max_length=59, min_length=30, do_sample=False)
+                    res = summarizer(chunks, min_length = int(0.2 * len(text)), max_length = int(0.5 * len(text)), do_sample=False)
                     # summary
                     text = ' '.join([summ['summary_text'] for summ in res])
                 except Exception:
