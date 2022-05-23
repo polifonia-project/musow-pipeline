@@ -286,7 +286,7 @@ def twitter_search_weekly (token, keyword_list, max_results, max_counts):
     input_keywords = [f'\"{k}\" -is:retweet' for k in keyword_list] 
     #send to search 
     for k in input_keywords:
-        filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'_{end[-1][6:10]}'
+        filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'_{end[-1][4:10]}'
         filename = re.sub(r"isretweet", '', filename)
         twitter_search(token, k, start, end, mresults, mcount, filename)
 
@@ -313,7 +313,7 @@ def twitter_search_custom (token, keyword_list, start_list, end_list, max_result
     input_keywords = [f'\"{k}\" -is:retweet' for k in keyword_list] 
     #send to search 
     for k in input_keywords:
-        filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'_{end[-1][6:10]}'
+        filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'_{end[-1][4:10]}'
         filename = re.sub(r"isretweet", '', filename)
         twitter_search(token, k, start, end, mresults, mcount, filename)
 
@@ -417,7 +417,7 @@ def scrape_links(link_list, pred_df, filename):
                 for chunk_id in range(len(chunks)):
                     chunks[chunk_id] = ' '.join(chunks[chunk_id])
                 try:
-                    res = summarizer(chunks, min_length = int(0.2 * len(text)), max_length = int(0.5 * len(text)), do_sample=False)
+                    res = summarizer(chunks, min_length = 30, max_length = 120, do_sample=False)
                     # summary
                     text = ' '.join([summ['summary_text'] for summ in res])
                 except Exception:
@@ -426,7 +426,7 @@ def scrape_links(link_list, pred_df, filename):
             else:
                 text = ARTICLE
             counter += 1
-            print(counter)
+            print(counter, URL)
             new_row = {'Title': title, 'Description': text, 'URL': URL.strip()}
             new_df = pd.DataFrame(data=new_row, index=[0])
             links = pd.concat([links, new_df], ignore_index=True)
@@ -503,6 +503,5 @@ def resource_predictions(path, filename, p_input, p_feature, score, savefile):
     preds = preds[~preds.Title.str.contains('|'.join(discard))]
     preds = preds.sort_values(by='Score', ascending=False).reset_index(drop=True)
     preds.to_csv(f'{path}LOGREG_RELEVANCE/PREDICTIONS/{savefile}.csv')
-    print(preds)
     return preds
 
