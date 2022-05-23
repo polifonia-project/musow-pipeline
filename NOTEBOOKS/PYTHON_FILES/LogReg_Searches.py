@@ -1,6 +1,7 @@
 from pipeline_functions import *
 
 class LogRegSearches(object):
+
     def train(t_input, t_feature, target, cv_int, score_type, filename, path):
         return lr_training(t_input, t_feature, target, cv_int, score_type, filename, path)
 
@@ -13,11 +14,19 @@ class LogRegSearches(object):
     def scrape_links(link_list):
         return scrape_links(link_list)
     
-    def predict_twitter(path, filename, p_input, p_feature, score, discard, filter):
-        return twitter_predictions(path, filename, p_input, p_feature, score, discard, filter)
-
-    def predict_resource(path, filename, p_input, p_feature, score, discard, savefile):
-        return resource_predictions(path, filename, p_input, p_feature, score, discard, savefile)
+    def search_twitter_weekly(token, keyword_list, max_results, max_counts):
+        return twitter_search_weekly (token, keyword_list, max_results, max_counts)
+    
+    def search_twitter_custom (token, keyword_list, start_list, end_list, max_results, max_counts):
+        return twitter_search_custom (token, keyword_list, start_list, end_list, max_results, max_counts)
 
     def tweets_to_classify(path, filetype):
         return tweets_to_classify(path, filetype)
+    
+    def predict_twitter(path, filename, p_input, p_feature, score, filter):
+        return twitter_predictions(path, filename, p_input, p_feature, score, filter)
+
+    def predict_resource(path, filename, p_input, p_feature, score, savefile):
+        return resource_predictions(path, filename, p_input, p_feature, score, savefile)
+
+    
