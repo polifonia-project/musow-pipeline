@@ -20,12 +20,12 @@ from transformers import pipeline
 import emoji
 
 #keywords to remove from URL and Title strings at prediction stages 
-discard = ['youtu', '404', 'Not Found', 'bandcamp', 'ebay', 'It needs a human touch', 'Page not found', 'open.spotify.com', 'We\'re sorry...', 'Not Acceptable!', 'Access denied', '412 Error', 'goo.gl', 'instagr.am', 'soundcloud', 'apple.co', 'amzn', 'masterstillmusic', 'Facebook', 'facebook', 'sheetmusiclibrary.website', 'Unsupported browser', 'Last.fm', 'last.fm', 'amazon.com', 'tidal.com', 'tmblr.co', 'blogspot', 'dailymusicroll', 'PortalTaxiMusic', 'apple.news', 'yahoo.com', 'sheetmusicplus.com', 'musicnotes.com', 'musescore.com', 'etsy', 'nts.live', 'twitch.tv', 'YouTube', 'radiosparx.com', 'freemusicarchive.org', 'blastradio', 'opensea', 'mixcloud', 'catalog.works', 'nft', 'NFT', 'allmusic.com', 'foundation.app', 'Robot or human?', 'heardle', 'insession.agency', 'jobvite', 'career', 'docs.google.com/forms/', 'discogs.com', 'zora.co', 'play.google.com', 't.me', 'mintable.app', 'instagram', 'linkedin', 'forms.gle', 'vimeo', 'radioiita', 'spotify', 'event', 'mediafire', 'noodsradio', 'pinterest']
+discard = ['youtu', '404', 'Not Found', 'bandcamp', 'ebay', 'It needs a human touch', 'Page not found', 'open.spotify.com', 'We\'re sorry...', 'Not Acceptable!', 'Access denied', '412 Error', 'goo.gl', 'instagr.am', 'soundcloud', 'apple.co', 'amzn', 'masterstillmusic', 'Facebook', 'facebook', 'sheetmusiclibrary.website', 'Unsupported browser', 'Last.fm', 'last.fm', 'amazon', 'tidal.com', 'tmblr.co', 'blogspot', 'dailymusicroll', 'PortalTaxiMusic', 'apple.news', 'yahoo.com', 'sheetmusicplus.com', 'musicnotes.com', 'musescore.com', 'etsy', 'nts.live', 'twitch.tv', 'YouTube', 'radiosparx.com', 'freemusicarchive.org', 'blastradio', 'opensea', 'mixcloud', 'catalog.works', 'nft', 'NFT', 'allmusic.com', 'foundation.app', 'Robot or human?', 'heardle', 'insession.agency', 'jobvite', 'career', 'docs.google.com/forms/', 'discogs.com', 'zora.co', 'play.google.com', 't.me', 'mintable.app', 'instagram', 'linkedin', 'forms.gle', 'vimeo', 'radioiita', 'spotify', 'event', 'mediafire', 'noodsradio', 'pinterest', 'rakuten', 'stackoverflow', 'fiverr', 'patreon']
 
 
 #LogReg functions 
 
-def lr_training(t_input, t_feature, target, cv_int, score_type, filename, path):
+def lr_training(t_input, t_feature, target, cv_int, score_type, max_feats, stopwords, filename, path):
     """ Create a text classifier based on Logistic regression and TF-IDF. Use cross validation 
     
     Parameters
@@ -40,14 +40,15 @@ def lr_training(t_input, t_feature, target, cv_int, score_type, filename, path):
         the number of cross validation folding
     score_type: str
         precision or recall
+    max_feats: int 
+        set the feature number for tdidf transformer
     filename: str
         model file name
     path: str
         parent folder
     """
-    # TODO eda to define max_features=1000
       
-    tfidf_transformer = TfidfVectorizer(ngram_range=(1, 2), lowercase=True, max_features=1000) 
+    tfidf_transformer = TfidfVectorizer(ngram_range=(1, 2), lowercase=True, max_features=max_feats, stop_words=stopwords) 
     x_train = tfidf_transformer.fit_transform(t_input[t_feature])
     y_train = t_input[target].values
     model = LogisticRegressionCV(solver='liblinear', random_state=44, cv=cv_int, scoring=score_type)
@@ -319,7 +320,7 @@ def twitter_search_custom (token, keyword_list, start_list, end_list, max_result
 
 ## Twitter preparation for prediction 
 
-def tweets_to_classify(path, filetype):   
+def tweets_to_classify(folder, filetype):   
     """ Merge all tweet searches together.
     
     Parameters
@@ -329,14 +330,14 @@ def tweets_to_classify(path, filetype):
     filetype: 
         the ending of the files to load, you can call just .pkl or also the date tag from file names
     """  
-    raw_searches = path+'TWITTER_SEARCHES/RAW_SEARCHES/'
+    raw_searches = folder
     result = pd.DataFrame()
     tweets_to_classify = pd.DataFrame()
     for file in os.listdir(raw_searches):
         if file.endswith(filetype):
             result = pd.read_pickle(raw_searches+file)
-        tweets_to_classify = pd.concat([tweets_to_classify, result])
-        tweets_to_classify = tweets_to_classify.reset_index(drop=True)
+            tweets_to_classify = pd.concat([tweets_to_classify, result])
+            tweets_to_classify = tweets_to_classify.reset_index(drop=True)
     print('Total tweets to classify:', len(tweets_to_classify))
     return tweets_to_classify
 
@@ -465,12 +466,15 @@ def twitter_predictions(path, filename, p_input, p_feature, score, filter):
     preds = preds.loc[preds['Prediction'] == score]
     preds = preds[~preds.URL.str.contains('|'.join(discard))]
     preds = preds.sort_values(by='Score', ascending=False).reset_index(drop=True)
-    preds = preds[['tweet', 'Prediction', 'Score', 'Probability', 'Input Length', 'URL', 'Search KW']]
+    preds = preds[['tweet', 'Prediction', 'Score', 'Probability', 'Input Length', 'URL', 'Search KW', 'created_at']]
+    preds['created_at'] = preds['created_at'].astype(str)
+    preds['created_at'] = preds['created_at'].str[0:10]
+    preds = preds.rename({'created_at': 'tweet date'}, axis=1)
     if filter != '':
         preds = preds[preds['tweet'].str.contains(filter)]
         preds = preds.reset_index(drop=True)
     twitter_link_list = [link for link in preds['URL']]
-    print('Total tweets classified:', len(preds))
+    print('Total tweets predicted:', len(preds))
     return preds, twitter_link_list
 
 def resource_predictions(path, filename, p_input, p_feature, score, savefile):
