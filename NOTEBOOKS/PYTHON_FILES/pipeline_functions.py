@@ -6,10 +6,11 @@ import re
 # classifier
 import pandas as pd
 import pickle
-from sklearn.linear_model import LogisticRegressionCV
-from sklearn.metrics import classification_report 
-from sklearn.model_selection import cross_val_predict
+from sklearn.linear_model import LogisticRegressionCV, LogisticRegression
+from sklearn.metrics import classification_report
+from sklearn.model_selection import cross_val_predict, cross_validate
 from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.pipeline import make_pipeline
 # web scraping
 import requests
 from bs4 import BeautifulSoup
@@ -51,7 +52,7 @@ def lr_training(t_input, t_feature, target, cv_int, score_type, max_feats, stopw
     tfidf_transformer = TfidfVectorizer(ngram_range=(1, 2), lowercase=True, max_features=max_feats, stop_words=stopwords) 
     x_train = tfidf_transformer.fit_transform(t_input[t_feature])
     y_train = t_input[target].values
-    model = LogisticRegressionCV(solver='liblinear', random_state=44, cv=cv_int, scoring=score_type)
+    model = LogisticRegression(solver='liblinear', C=10.0, random_state=44)
     
     # export
     model.fit(x_train, y_train)
