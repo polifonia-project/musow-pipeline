@@ -1,9 +1,0 @@
-,tweet,Prediction,Score,Probability,Input Length,URL,Search KW,Title,Description
-0," Project: Music Recommendation
-
- Million Song Dataset
- Metadata for a million songs
-
-https://t.co/QgdSdIYnVV
-
-Solution ",1,3.671087784377132,0.9751827952792398,291,http://millionsongdataset.com,"""song dataset"" -is:retweet",Welcome! | Million Song Dataset," The Million Song Dataset is a free-available collection of audio features and metadata for a million contemporary popular music tracks . The core of the dataset is the feature analysis and . metadata for one million songs, provided by The Echo Nest . The dataset does not include any audio,"
