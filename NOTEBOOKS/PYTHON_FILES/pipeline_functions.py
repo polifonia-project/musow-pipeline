@@ -324,10 +324,14 @@ def twitter_search_custom (token, keyword_list, start_list, end_list, max_result
     #format keywords for search
     input_keywords = [f'\"{k}\" -is:retweet' for k in keyword_list]
     #send to search
+    #send to search
+    filenames = []
     for k in input_keywords:
         filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'_{end[-1][4:10]}'
         filename = re.sub(r"isretweet", '', filename)
         twitter_search(token, k, start, end, mresults, mcount, filename)
+        filenames.append(filename)
+    return filenames
 
 ## Twitter preparation for prediction
 
