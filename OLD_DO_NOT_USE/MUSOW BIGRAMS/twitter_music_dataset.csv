@@ -1,0 +1,66 @@
+user,created_at,lang,like_count,quote_count,reply_count,retweet_count,tweet,url
+ajayram198,2021-02-18 16:22:55+00:00,en,0,0,0,0,"2013, Master Thesis, Principal Component PCA with #matlab &amp; #music Dataset 5k songs (datapoints). 8 yrs later, what tremendous improvements #EmbracetheRandomness #DataScience #MachineLearning. still remember those Crazy days figuring out #Mathematics Eigenvalue Decomposition :) https://t.co/LWkqlfETTG",
+naotokui_en,2021-03-12 01:45:27+00:00,en,3,0,1,0,Day 4: retrained baseline seq2seq model with house music dataset. https://t.co/S62w2ccIDR,
+s_rosen2g,2021-03-11 18:20:35+00:00,en,0,0,0,0,"@samuelmehr If it is a music dataset, you could have a look at the TISMIR journal, which is open to dataset articles.", 
+flaviojuvenal,2021-04-20 18:44:48+00:00,en,1,0,0,0,"@forestgregg @vintasoftware I didn't use more training data than what's available in benchmarks: https://t.co/I52T7q6l5m
+
+With few hundred clusters it can perform with good recall in the Music dataset of 20k records.",https://dbs.uni-leipzig.de/research/projects/object_matching/benchmark_datasets_for_entity_resolution
+chi_di_ebere,2021-05-25 06:55:33+00:00,en,0,0,1,1,"Day 36
+Topic: Pivot Chart
+
+Let's assume we are asked to check the genre of albums in our same music dataset since Day 34.
+
+Pivot table aides us to know the COUNT of each genre in our dataset. To check this, we will drag the genre field (column) to the ROW and VALUES squares
+
+1/ https://t.co/AVo3K09Oid",
+DeUltimate001,2021-05-10 06:24:25+00:00,en,1,0,0,0,I'm working on a project(I want to 😵)... Building this DNN that composes jazz music (I like jazz🤷‍♂️).. But I have trouble finding data or even what kind of audio dataset it should be. Last I worked with had ABC notation to label the audio music dataset. #DeepLearning #ML #AI, 
+StudyListening,2021-07-29 01:20:10+00:00,en,1,0,1,0,"Breeden &amp; Arthur, what do I dance to this?: A perceptual study of dance genre identification
+
+&gt;Using dancers music dataset (using playlists on Spotify – for 8 dance genres, from N=125,444 songs)
+
+#ICMPCESCOM21 #MusicScience", 
+siddbadal,2021-07-03 18:33:52+00:00,en,4,0,0,1,"Day 3 of #66DaysOfData #Python 
+Completed the third course of Coursera Google data analytics. Learned about data collection, data preparation, data privacy, best practices for organizing data. Also worked on a music dataset with SQL on Mode. 
+
+https://t.co/dD4kt5vNkK",https://coursera.org/share/8856d90630acd20060c98897ebb6b06d
+_elioRocha,2021-08-22 07:54:18+00:00,en,0,0,0,0,"""ChMusic: A Traditional Chinese Music Dataset for Evaluation of Instrument Recognition. (arXiv:2108.08470v1 [https://t.co/Cg3srteg6B])"" #arXiv https://t.co/6MFoHexHA5","http://eess.AS, https://j.mp/3D8uzv1"
+stephenwithavee,2021-08-20 19:42:30+00:00,en,0,0,1,0,"ChMusic: A Traditional Chinese Music Dataset for Evaluation of Instrument Recognition
+
+https://t.co/0zfTjipcRs",http://sciencewise.info/bookmarks/2108.08470/add
+pm_girl,2021-08-20 07:04:20+00:00,en,0,0,0,0,#ChMusic: A Traditional Chinese Music Dataset for Evaluation of Instrument Recognition. (arXiv:2108.08470v1 [https://t.co/FUJk598i0w]) https://t.co/rSxnRkfxT2 #artificialintelligence #ai,"http://eess.AS, https://ift.tt/2XBu3W9"
+ArxivSound,2021-08-20 02:24:56+00:00,ro,5,0,0,1,"``ChMusic: A Traditional Chinese Music Dataset for Evaluation of Instrument Recognition. (arXiv:2108.08470v1 [https://t.co/3pcQCkeyAA]),'' Xia Gong, Yuxiang Zhu, Haidi Zhu, Haoran Wei, https://t.co/aXBtI8fWIq","http://eess.AS, https://ift.tt/2XBu3W9"
+coreycrossfield,2021-08-10 06:43:22+00:00,en,2,0,0,0,"Day 10 of #100daysofnocode
+
+🦡 Finished the landing page for tomorrow’s @srslylabs drop in @carrd 
+
+💻 Explored different video chat plugins for the next product drop but didn’t find anything that’s a great fit 
+
+📝 Began label classification list for music dataset for AI model", 
+ak92501,2021-08-02 01:03:36+00:00,en,55,3,2,11,"DadaGP: A Dataset of Tokenized GuitarPro Songs for Sequence Models
+paper: https://t.co/YTIJQDrSIo
+
+symbolic music dataset comprising 26,181 song scores in the GuitarPro format covering 739 musical genres, along with an accompanying tokenized format https://t.co/pvlh0ySCHt",https://arxiv.org/abs/2107.14653
+adnan_hashmi,2021-09-25 19:23:12+00:00,en,0,0,0,1,"Analysis of Pink Floyd music based on the Spotify Music Dataset
+https://t.co/QK2svBhHgn
+#DataScience #DataViz https://t.co/ZcxTjjVTmr",https://bit.ly/39Ar5nE
+Brvzilian_,2021-09-09 22:50:49+00:00,en,1,0,0,0,I am looking for a good music dataset (preferably having popular rock songs). Is there such thing publically available?, 
+DavidGhitulescu,2021-09-09 18:13:31+00:00,en,0,0,0,0,@EveryNoise Do you happen to know of a good music dataset(s) I could get to play around with that idea?, 
+Dipankartnt,2021-09-01 18:16:56+00:00,en,0,0,1,0,Example: Here is a Radial visualization I developed using @d3js_org to understand #Spotify’s music dataset features. Each of the points you see in this visualization is a song. https://t.co/iXTHHmbO2C,
+reddit_datasets,2021-10-22 22:06:01+00:00,en,0,0,0,0,Looking for a good music dataset (i.e. album + artist + genre + year) https://t.co/QmGngEB7id,http://dlvr.it/SB6zqf
+DogmaticPrior,2021-10-22 00:55:15+00:00,en,1,0,4,0,@BrettDanaher Lots of students are using the spotify dataset because it has cool music data. But I'm wondering if there's a different music dataset that might be of interest., 
+DrTBehrens,2021-10-20 14:45:55+00:00,en,0,0,1,0,I would love to apply this to my music dataset! Had some sweet successes with GPT-2 in the past. https://t.co/MNCoKcICwI,
+Cyanite_ai,2021-10-01 10:16:50+00:00,en,2,0,0,0,"📊Data is useless without meaning. 📝 If you have an existing #music dataset and want to get actionable insights, here is a simple #framework by Liv Buli from Berklee’s University to make data-based decisions. 
+
+Read here 👉 https://t.co/8s5nFZwrsa
+
+@spotifyartists @chartmetric https://t.co/Tw5Lj9mepO",https://bit.ly/3AZbuu5
+stvnbailey,2021-11-16 04:39:45+00:00,en,2,0,0,0,"@johngriffin - just come across this blog post of yours from a couple of years ago: https://t.co/KSHwSvYEW5
+
+Check out @JaxstaMusic - does exactly what you are looking for. Jaxsta has a great mission, needs people to spread the word",https://atchai.com/blog/2016-05-03-in-search-of-the-perfect-music-dataset/
+monobor,2021-11-08 19:40:40+00:00,en,8,0,0,5,"For those interested in music AI, we just released the largest symbolic music dataset ever. METAMIDI is 436k multitrack compositions with 10M+ audio matches, and plenty of metadata...check our ISMIR paper for more details: 
+https://t.co/4dWYNzft6a",https://archives.ismir.net/ismir2021/paper/000022.pdf
+Salman013a,2021-12-30 13:57:00+00:00,en,2,0,0,0,Anybody has indian classic raga music dataset. If yes please share with me. Thank you, 
+DrTBehrens,2021-12-17 14:18:51+00:00,en,7,0,0,2,"#deeplearning work is #data work. I reached another milestone today. Managed to preprocess a huge portion of the lakh music dataset for my music generation passion. 11GB!
+
+#tensorflow #pytorch https://t.co/lyAlwqMtE5",
+ArxivSound,2021-12-14 04:24:44+00:00,en,0,0,0,0,"``ChMusic: A Traditional Chinese Music Dataset for Evaluation of Instrument Recognition. (arXiv:2108.08470v2 [https://t.co/3pcQCkeyAA] UPDATED),'' Xia Gong, Yuxiang Zhu, Haidi Zhu, Haoran Wei, https://t.co/aXBtI8fWIq","http://eess.AS, https://ift.tt/2XBu3W9"

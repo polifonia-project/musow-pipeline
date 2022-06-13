@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <link href="http://arxiv.org/api/query?search_query%3D%22music%20collection%22%26id_list%3D%26start%3D0%26max_results%3D10" rel="self" type="application/atom+xml"/>
+  <title type="html">ArXiv Query: search_query="music collection"&amp;id_list=&amp;start=0&amp;max_results=10</title>
+  <id>http://arxiv.org/api/NrohBxZY14qKwCyMfGHnSETj9RE</id>
+  <updated>2022-02-24T00:00:00-05:00</updated>
+  <opensearch:totalResults xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">9</opensearch:totalResults>
+  <opensearch:startIndex xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">0</opensearch:startIndex>
+  <opensearch:itemsPerPage xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/">10</opensearch:itemsPerPage>
+  <entry>
+    <id>http://arxiv.org/abs/0911.3842v1</id>
+    <updated>2009-11-19T20:29:04Z</updated>
+    <published>2009-11-19T20:29:04Z</published>
+    <title>Musical Genres: Beating to the Rhythms of Different Drums</title>
+    <summary>  Online music databases have increased signicantly as a consequence of the
+rapid growth of the Internet and digital audio, requiring the development of
+faster and more efficient tools for music content analysis. Musical genres are
+widely used to organize music collections. In this paper, the problem of
+automatic music genre classification is addressed by exploring rhythm-based
+features obtained from a respective complex network representation. A Markov
+model is build in order to analyse the temporal sequence of rhythmic notation
+events. Feature analysis is performed by using two multivariate statistical
+approaches: principal component analysis(unsupervised) and linear discriminant
+analysis (supervised). Similarly, two classifiers are applied in order to
+identify the category of rhythms: parametric Bayesian classifier under gaussian
+hypothesis (supervised), and agglomerative hierarchical clustering
+(unsupervised). Qualitative results obtained by Kappa coefficient and the
+obtained clusters corroborated the effectiveness of the proposed method.
+</summary>
+    <author>
+      <name>Debora C. Correa</name>
+    </author>
+    <author>
+      <name>Jose H. Saito</name>
+    </author>
+    <author>
+      <name>Luciano da F. Costa</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.1088/1367-2630/12/5/053030</arxiv:doi>
+    <link title="doi" href="http://dx.doi.org/10.1088/1367-2630/12/5/053030" rel="related"/>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">35 pages, 13 figures, 13 tables</arxiv:comment>
+    <link href="http://arxiv.org/abs/0911.3842v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/0911.3842v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="physics.data-an" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.data-an" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="physics.soc-ph" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1509.04956v1</id>
+    <updated>2015-09-16T15:56:22Z</updated>
+    <published>2015-09-16T15:56:22Z</published>
+    <title>Melodic Contour and Mid-Level Global Features Applied to the Analysis of
+  Flamenco Cantes</title>
+    <summary>  This work focuses on the topic of melodic characterization and similarity in
+a specific musical repertoire: a cappella flamenco singing, more specifically
+in debla and martinete styles. We propose the combination of manual and
+automatic description. First, we use a state-of-the-art automatic transcription
+method to account for general melodic similarity from music recordings. Second,
+we define a specific set of representative mid-level melodic features, which
+are manually labeled by flamenco experts. Both approaches are then contrasted
+and combined into a global similarity measure. This similarity measure is
+assessed by inspecting the clusters obtained through phylogenetic algorithms
+algorithms and by relating similarity to categorization in terms of style.
+Finally, we discuss the advantage of combining automatic and expert annotations
+as well as the need to include repertoire-specific descriptions for meaningful
+melodic characterization in traditional music collections.
+</summary>
+    <author>
+      <name>Francisco Gómez</name>
+    </author>
+    <author>
+      <name>Joaquín Mora</name>
+    </author>
+    <author>
+      <name>Emilia Gómez</name>
+    </author>
+    <author>
+      <name>José Miguel Díaz-Báñez</name>
+    </author>
+    <link href="http://arxiv.org/abs/1509.04956v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1509.04956v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1612.01840v3</id>
+    <updated>2017-09-05T18:38:33Z</updated>
+    <published>2016-12-06T14:58:59Z</published>
+    <title>FMA: A Dataset For Music Analysis</title>
+    <summary>  We introduce the Free Music Archive (FMA), an open and easily accessible
+dataset suitable for evaluating several tasks in MIR, a field concerned with
+browsing, searching, and organizing large music collections. The community's
+growing interest in feature and end-to-end learning is however restrained by
+the limited availability of large audio datasets. The FMA aims to overcome this
+hurdle by providing 917 GiB and 343 days of Creative Commons-licensed audio
+from 106,574 tracks from 16,341 artists and 14,854 albums, arranged in a
+hierarchical taxonomy of 161 genres. It provides full-length and high-quality
+audio, pre-computed features, together with track- and user-level metadata,
+tags, and free-form text such as biographies. We here describe the dataset and
+how it was created, propose a train/validation/test split and three subsets,
+discuss some suitable MIR tasks, and evaluate some baselines for genre
+recognition. Code, data, and usage examples are available at
+https://github.com/mdeff/fma
+</summary>
+    <author>
+      <name>Michaël Defferrard</name>
+    </author>
+    <author>
+      <name>Kirell Benzi</name>
+    </author>
+    <author>
+      <name>Pierre Vandergheynst</name>
+    </author>
+    <author>
+      <name>Xavier Bresson</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">ISMIR 2017 camera-ready</arxiv:comment>
+    <link href="http://arxiv.org/abs/1612.01840v3" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1612.01840v3" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1902.04397v1</id>
+    <updated>2019-02-12T14:13:35Z</updated>
+    <published>2019-02-12T14:13:35Z</published>
+    <title>Cross-Modal Music Retrieval and Applications: An Overview of Key
+  Methodologies</title>
+    <summary>  There has been a rapid growth of digitally available music data, including
+audio recordings, digitized images of sheet music, album covers and liner
+notes, and video clips. This huge amount of data calls for retrieval strategies
+that allow users to explore large music collections in a convenient way. More
+precisely, there is a need for cross-modal retrieval algorithms that, given a
+query in one modality (e.g., a short audio excerpt), find corresponding
+information and entities in other modalities (e.g., the name of the piece and
+the sheet music). This goes beyond exact audio identification and subsequent
+retrieval of metainformation as performed by commercial applications like
+Shazam [1].
+</summary>
+    <author>
+      <name>Meinard Müller</name>
+    </author>
+    <author>
+      <name>Andreas Arzt</name>
+    </author>
+    <author>
+      <name>Stefan Balke</name>
+    </author>
+    <author>
+      <name>Matthias Dorfer</name>
+    </author>
+    <author>
+      <name>Gerhard Widmer</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.1109/MSP.2018.2868887</arxiv:doi>
+    <link title="doi" href="http://dx.doi.org/10.1109/MSP.2018.2868887" rel="related"/>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">IEEE Signal Processing Magazine (Volume: 36, Issue: 1, Jan. 2019)</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/1902.04397v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1902.04397v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.MM" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2111.00704v2</id>
+    <updated>2022-02-20T15:32:12Z</updated>
+    <published>2021-11-01T04:54:01Z</published>
+    <title>A Novel 1D State Space for Efficient Music Rhythmic Analysis</title>
+    <summary>  Inferring music time structures has a broad range of applications in music
+production, processing and analysis. Scholars have proposed various methods to
+analyze different aspects of time structures, such as beat, downbeat, tempo and
+meter. Many state-of-the-art (SOFA) methods, however, are computationally
+expensive. This makes them inapplicable in real-world industrial settings where
+the scale of the music collections can be millions. This paper proposes a new
+state space and a semi-Markov model for music time structure analysis. The
+proposed approach turns the commonly used 2D state spaces into a 1D model
+through a jump-back reward strategy. It reduces the state spaces size
+drastically. We then utilize the proposed method for causal, joint beat,
+downbeat, tempo, and meter tracking, and compare it against several previous
+methods. The proposed method delivers similar performance with the SOFA joint
+causal models with a much smaller state space and a more than 30 times speedup.
+</summary>
+    <author>
+      <name>Mojtaba Heydari</name>
+    </author>
+    <author>
+      <name>Matthew McCallum</name>
+    </author>
+    <author>
+      <name>Andreas Ehmann</name>
+    </author>
+    <author>
+      <name>Zhiyao Duan</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">International Conference on Acoustics, Speech and Signal Processing
+  (ICASSP), May. 2022</arxiv:comment>
+    <link href="http://arxiv.org/abs/2111.00704v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2111.00704v2" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.AS" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.SP" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1401.2516v1</id>
+    <updated>2014-01-11T10:29:34Z</updated>
+    <published>2014-01-11T10:29:34Z</published>
+    <title>Progressive Filtering Using Multiresolution Histograms for Query by
+  Humming System</title>
+    <summary>  The rising availability of digital music stipulates effective categorization
+and retrieval methods. Real world scenarios are characterized by mammoth music
+collections through pertinent and non-pertinent songs with reference to the
+user input. The primary goal of the research work is to counter balance the
+perilous impact of non-relevant songs through Progressive Filtering (PF) for
+Query by Humming (QBH) system. PF is a technique of problem solving through
+reduced space. This paper presents the concept of PF and its efficient design
+based on Multi-Resolution Histograms (MRH) to accomplish searching in
+manifolds. Initially the entire music database is searched to obtain high
+recall rate and narrowed search space. Later steps accomplish slow search in
+the reduced periphery and achieve additional accuracy.
+  Experimentation on large music database using recursive programming
+substantiates the potential of the method. The outcome of proposed strategy
+glimpses that MRH effectively locate the patterns. Distances of MRH at lower
+level are the lower bounds of the distances at higher level, which guarantees
+evasion of false dismissals during PF. In due course, proposed method helps to
+strike a balance between efficiency and effectiveness. The system is scalable
+for large music retrieval systems and also data driven for performance
+optimization as an added advantage.
+</summary>
+    <author>
+      <name>Trisiladevi C. Nagavi</name>
+    </author>
+    <author>
+      <name>Nagappa U. Bhajantri</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.1007/978-81-322-1143-3_21</arxiv:doi>
+    <link title="doi" href="http://dx.doi.org/10.1007/978-81-322-1143-3_21" rel="related"/>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">12 Pages, 6 Figures, Full version of the paper published at
+  ICMCCA-2012 with the same title,
+  Link:http://link.springer.com/chapter/10.1007/978-81-322-1143-3_21</arxiv:comment>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">Proc. of the First International Conference on Multimedia
+  Processing,Communication and Computing Applications(ICMCCA) 13-15 December
+  2012,Bangalore India,Lecture Notes in Electrical Engineering,Volume 213,Pages
+  253-265,Springer India,2013</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/1401.2516v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1401.2516v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1905.11959v1</id>
+    <updated>2019-05-28T17:30:31Z</updated>
+    <published>2019-05-28T17:30:31Z</published>
+    <title>Texture Selection for Automatic Music Genre Classification</title>
+    <summary>  Music Genre Classification is the problem of associating genre-related labels
+to digitized music tracks. It has applications in the organization of
+commercial and personal music collections. Often, music tracks are described as
+a set of timbre-inspired sound textures. In shallow-learning systems, the total
+number of sound textures per track is usually too high, and texture
+downsampling is necessary to make training tractable. Although previous work
+has solved this by linear downsampling, no extensive work has been done to
+evaluate how texture selection benefits genre classification in the context of
+the bag of frames track descriptions. In this paper, we evaluate the impact of
+frame selection on automatic music genre classification in a bag of frames
+scenario. We also present a novel texture selector based on K-Means aimed to
+identify diverse sound textures within each track. We evaluated texture
+selection in diverse datasets, four different feature sets, as well as its
+relationship to a univariate feature selection strategy. The results show that
+frame selection leads to significant improvement over the single vector
+baseline on datasets consisting of full-length tracks, regardless of the
+feature set. Results also indicate that the K-Means texture selector achieves
+significant improvements over the baseline, using fewer textures per track than
+the commonly used linear downsampling. The results also suggest that texture
+selection is complementary to the feature selection strategy evaluated. Our
+qualitative analysis indicates that texture variety within classes benefits
+model generalization. Our analysis shows that selecting specific audio excerpts
+can improve classification performance, and it can be done automatically.
+</summary>
+    <author>
+      <name>Juliano H. Foleiss</name>
+    </author>
+    <author>
+      <name>Tiago F. Tavares</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.1016/j.asoc.2020.106127</arxiv:doi>
+    <link title="doi" href="http://dx.doi.org/10.1016/j.asoc.2020.106127" rel="related"/>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Submitted to Pattern Recognition (may, 2019)</arxiv:comment>
+    <link href="http://arxiv.org/abs/1905.11959v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1905.11959v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.SD" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.LG" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="eess.AS" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/1910.09242v1</id>
+    <updated>2019-10-21T09:58:00Z</updated>
+    <published>2019-10-21T09:58:00Z</published>
+    <title>On large-scale genre classification in symbolically encoded music by
+  automatic identification of repeating patterns</title>
+    <summary>  The importance of repetitions in music is well-known. In this paper, we study
+music repetitions in the context of effective and efficient automatic genre
+classification in large-scale music-databases. We aim at enhancing the access
+and organization of pieces of music in Digital Libraries by allowing automatic
+categorization of entire collections by considering only their musical content.
+We handover to the public a set of genre-specific patterns to support research
+in musicology. The patterns can be used, for instance, to explore and analyze
+the relations between musical genres. There are many existing algorithms that
+could be used to identify and extract repeating patterns in symbolically
+encoded music. In our case, the extracted patterns are used as representations
+of the pieces of music on the underlying corpus and, consecutively, to train
+and evaluate a classifier to automatically identify genres. In this paper, we
+apply two very fast algorithms enabling us to experiment on large and diverse
+corpora. Thus, we are able to find patterns with strong discrimination power
+that can be used in various applications. We carried out experiments on a
+corpus containing over 40,000 MIDI files annotated with at least one genre. The
+experiments suggest that our approach is scalable and capable of dealing with
+real-world-size music collections.
+</summary>
+    <author>
+      <name>Andres Ferraro</name>
+    </author>
+    <author>
+      <name>Kjell Lemström</name>
+    </author>
+    <arxiv:doi xmlns:arxiv="http://arxiv.org/schemas/atom">10.1145/3273024.3273035</arxiv:doi>
+    <link title="doi" href="http://dx.doi.org/10.1145/3273024.3273035" rel="related"/>
+    <arxiv:journal_ref xmlns:arxiv="http://arxiv.org/schemas/atom">Proceedings of the 5th International Conference on Digital
+  Libraries for Musicology (DLfM '18). ACM, New York, NY, USA, 34-37. 2018</arxiv:journal_ref>
+    <link href="http://arxiv.org/abs/1910.09242v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/1910.09242v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+  <entry>
+    <id>http://arxiv.org/abs/2102.12188v1</id>
+    <updated>2021-02-24T10:28:22Z</updated>
+    <published>2021-02-24T10:28:22Z</published>
+    <title>Support the Underground: Characteristics of Beyond-Mainstream Music
+  Listeners</title>
+    <summary>  Music recommender systems have become an integral part of music streaming
+services such as Spotify and Last.fm to assist users navigating the extensive
+music collections offered by them. However, while music listeners interested in
+mainstream music are traditionally served well by music recommender systems,
+users interested in music beyond the mainstream (i.e., non-popular music)
+rarely receive relevant recommendations. In this paper, we study the
+characteristics of beyond-mainstream music and music listeners and analyze to
+what extent these characteristics impact the quality of music recommendations
+provided. Therefore, we create a novel dataset consisting of Last.fm listening
+histories of several thousand beyond-mainstream music listeners, which we
+enrich with additional metadata describing music tracks and music listeners.
+Our analysis of this dataset shows four subgroups within the group of
+beyond-mainstream music listeners that differ not only with respect to their
+preferred music but also with their demographic characteristics. Furthermore,
+we evaluate the quality of music recommendations that these subgroups are
+provided with four different recommendation algorithms where we find
+significant differences between the groups. Specifically, our results show a
+positive correlation between a subgroup's openness towards music listened to by
+members of other subgroups and recommendation accuracy. We believe that our
+findings provide valuable insights for developing improved user models and
+recommendation approaches to better serve beyond-mainstream music listeners.
+</summary>
+    <author>
+      <name>Dominik Kowald</name>
+    </author>
+    <author>
+      <name>Peter Muellner</name>
+    </author>
+    <author>
+      <name>Eva Zangerle</name>
+    </author>
+    <author>
+      <name>Christine Bauer</name>
+    </author>
+    <author>
+      <name>Markus Schedl</name>
+    </author>
+    <author>
+      <name>Elisabeth Lex</name>
+    </author>
+    <arxiv:comment xmlns:arxiv="http://arxiv.org/schemas/atom">Accepted for publication in EPJ Data Science - link to published
+  version will be added</arxiv:comment>
+    <link href="http://arxiv.org/abs/2102.12188v1" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2102.12188v1" rel="related" type="application/pdf"/>
+    <arxiv:primary_category xmlns:arxiv="http://arxiv.org/schemas/atom" term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.IR" scheme="http://arxiv.org/schemas/atom"/>
+  </entry>
+</feed>
