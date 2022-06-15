@@ -294,7 +294,7 @@ def twitter_search_weekly (token, keyword_list, max_results, max_counts):
     #format keywords for search
     input_keywords = [f'\"{k}\" -is:retweet' for k in keyword_list]
     #send to search
-    filenames = []
+    filenames = [] 
     for k in input_keywords:
         filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'{end[-1][4:10]}'
         filename = re.sub(r"isretweet", '', filename)
