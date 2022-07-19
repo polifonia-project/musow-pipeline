@@ -21,7 +21,11 @@ from transformers import pipeline
 import emoji
 
 #keywords to remove from URL and Title strings at prediction stages
-discard = ['youtu', '404', 'Not Found', 'bandcamp', 'ebay', 'It needs a human touch', 'Page not found', 'open.spotify.com', 'We\'re sorry...', 'Not Acceptable!', 'Access denied', '412 Error', 'goo.gl', 'instagr.am', 'soundcloud', 'apple.co', 'amzn', 'masterstillmusic', 'Facebook', 'facebook', 'sheetmusiclibrary.website', 'Unsupported browser', 'Last.fm', 'last.fm', 'amazon', 'tidal.com', 'tmblr.co', 'blogspot', 'dailymusicroll', 'PortalTaxiMusic', 'apple.news', 'yahoo.com', 'sheetmusicplus.com', 'musicnotes.com', 'musescore.com', 'etsy', 'nts.live', 'twitch.tv', 'YouTube', 'radiosparx.com', 'freemusicarchive.org', 'blastradio', 'opensea', 'mixcloud', 'catalog.works', 'nft', 'NFT', 'allmusic.com', 'foundation.app', 'Robot or human?', 'heardle', 'insession.agency', 'jobvite', 'career', 'docs.google.com/forms/', 'discogs.com', 'zora.co', 'play.google.com', 't.me', 'mintable.app', 'instagram', 'linkedin', 'forms.gle', 'vimeo', 'radioiita', 'spotify', 'event', 'mediafire', 'noodsradio', 'pinterest', 'rakuten', 'stackoverflow', 'fiverr', 'patreon']
+title_discard = ['404', 'Not Found', 'It needs a human touch', 'Page not found', 'We\'re sorry...', 'Not Acceptable!', 'Access denied', '412 Error', 'Unsupported browser', 'Last.fm', 'PortalTaxiMusic', 'YouTube', 'Robot or human?']
+
+url_discard = ['youtu', 'bandcamp', 'ebay', 'open.spotify.com', 'goo.gl', 'instagr.am', 'soundcloud', 'apple.co', 'amzn', 'masterstillmusic', 'facebook', 'last.fm', 'amazon', 'tidal.com', 'tmblr.co', 'dailymusicroll','apple.news', 'yahoo.com', 'etsy', 'nts.live', 'twitch.tv', 'radiosparx.com', 'freemusicarchive.org', 'blastradio', 'opensea', 'mixcloud', 'catalog.works', 'nft', 'allmusic.com', 'foundation.app', 'heardle', 'insession.agency', 'jobvite', 'career', 'docs.google.com/forms/', 'discogs.com', 'zora.co', 'play.google.com', 't.me', 'mintable.app', 'instagram', 'linkedin', 'forms.gle', 'vimeo', 'radioiita', 'spotify', 'event', 'mediafire', 'noodsradio', 'pinterest', 'rakuten', 'stackoverflow', 'fiverr', 'patreon']
+
+desc_discard = ['None', '! D O C T Y P E h t m l >', '! d o c t y p e h t m l >', '! D O C T Y P E H T M L >', '! D O C T Y P E h t m l P U B L I C ']
 
 
 #LogReg functions
@@ -154,6 +158,8 @@ def append_to_csv(json_response, fileName):
         author_id = tweet['author_id']
         user = username[author_id]
 
+        tweet_id = tweet['id']
+
         # 2. Time created
         created_at = dateutil.parser.parse(tweet['created_at'])
 
@@ -178,7 +184,7 @@ def append_to_csv(json_response, fileName):
         text = give_emoji_free_text(tweet['text'])
 
         # Assemble all data in a list
-        res = [user, created_at, lang, like_count, quote_count, reply_count, retweet_count, text, url]
+        res = [user, tweet_id, created_at, lang, like_count, quote_count, reply_count, retweet_count, text, url]
 
         # Append the result to the CSV file
         csvWriter.writerow(res)
@@ -203,7 +209,7 @@ def twitter_search(token, keyword, start, end, mresults, mcount, file_name):
     # Create file
     csvFile = open(f'{path}TWITTER_SEARCHES/RAW_SEARCHES/{file_name}.csv', "a", newline="", encoding='utf-8')
     csvWriter = csv.writer(csvFile)
-    csvWriter.writerow(['user', 'created_at', 'lang', 'like_count', 'quote_count', 'reply_count','retweet_count','tweet', 'URL'])
+    csvWriter.writerow(['user', 'tweet id', 'created_at', 'lang', 'like_count', 'quote_count', 'reply_count','retweet_count','tweet', 'URL'])
     csvFile.close()
 
     for i in range(0,len(start_list)):
@@ -296,7 +302,7 @@ def twitter_search_weekly (token, keyword_list, max_results, max_counts):
     #send to search
     filenames = [] 
     for k in input_keywords:
-        filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'{end[-1][4:10]}'
+        filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'_{end[-1][5:10]}'
         filename = re.sub(r"isretweet", '', filename)
         twitter_search(token, k, start, end, mresults, mcount, filename)
         filenames.append(filename)
@@ -327,7 +333,7 @@ def twitter_search_custom (token, keyword_list, start_list, end_list, max_result
     #send to search
     filenames = []
     for k in input_keywords:
-        filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'_{end[-1][4:10]}'
+        filename = re.sub(r"([^A-Za-z0-9]+)", '', k) + f'_{start[0][0:10]}' + f'_{end[-1][5:10]}'
         filename = re.sub(r"isretweet", '', filename)
         twitter_search(token, k, start, end, mresults, mcount, filename)
         filenames.append(filename)
@@ -384,17 +390,19 @@ def scrape_links(link_list, pred_df, filename):
 
     for link in link_list:
         URL = link
-        page = None
+        page = None 
+        status = None
         ARTICLE = ''
         try:
             x = requests.head(URL, timeout=15)
             content_type = x.headers["Content-Type"] if "Content-Type" in x.headers else "None"
             if ("text/html" in content_type.lower()):
                 page = requests.get(URL, timeout=15)
+                status = page.status_code
         except Exception:
             pass
 
-        if page:
+        if status == 200 and page:
             soup = BeautifulSoup(page.content, "html.parser")
             title = ' '.join([t.text for t in soup.find('head').find_all('title')]).strip() \
                 if soup and soup.find('head') and soup.find('body') is not None \
@@ -446,9 +454,8 @@ def scrape_links(link_list, pred_df, filename):
             new_row = {'Title': title, 'Description': text, 'URL': URL.strip()}
             new_df = pd.DataFrame(data=new_row, index=[0])
             links = pd.concat([links, new_df], ignore_index=True)
-    discard = ['None', '! D O C T Y P E h t m l >', '! d o c t y p e h t m l >', '! D O C T Y P E H T M L >']
     links = links.fillna('None')
-    links = links[~links.Description.str.contains('|'.join(discard))]
+    links = links[~links.Description.str.contains('|'.join(desc_discard))]
     twitter_scrapes_preds = pd.merge(pred_df, links, on='URL')
     twitter_scrapes_preds.to_pickle(f'{path}LOGREG_RELEVANCE/SCRAPES/{filename}.pkl')
     print(len(twitter_scrapes_preds))
@@ -456,7 +463,17 @@ def scrape_links(link_list, pred_df, filename):
 
 #Prediction functions
 
-def twitter_predictions(path, filename, p_input, p_feature, score, filter=None):
+def clean_urls(row):
+   if ', ' in row['URL']:
+        row2 = row.copy()
+        new_url = re.search(r'[^, ]*$', row2['URL'])
+        old_url = re.search(r'^((?!(,)).)*', row['URL'])
+        row2['URL'] = new_url.group(0)
+        row['URL'] = old_url.group(0)
+        return pd.concat([row, row2], axis=1)
+   return row
+
+def twitter_predictions(path, filename, p_input, p_feature, score):
     """ Predict relevant tweets using a pickled model based on Logistic regression and TF-IDF.
 
     Parameters
@@ -479,16 +496,13 @@ def twitter_predictions(path, filename, p_input, p_feature, score, filter=None):
     preds = lr_predict(path, filename, p_input, p_feature)
     preds = preds.drop_duplicates(['tweet'], keep='last')
     preds = preds.loc[preds['Prediction'] == score]
-    preds = preds[~preds.URL.str.contains('|'.join(discard))]
+    preds = preds[~preds.URL.str.contains('|'.join(url_discard))]
+    preds = pd.concat([clean_urls(row) for _, row in preds.iterrows()], ignore_index=True, axis=1).T
     preds = preds.sort_values(by='Score', ascending=False).reset_index(drop=True)
-    preds = preds[['tweet', 'Prediction', 'Score', 'Probability', 'Input Length', 'URL', 'Search KW', 'created_at']]
+    preds = preds[['tweet', 'Prediction', 'Score', 'Probability', 'Input Length', 'URL', 'Search KW', 'created_at', 'user', 'tweet id']]
     preds['created_at'] = preds['created_at'].astype(str)
     preds['created_at'] = preds['created_at'].str[0:10]
     preds = preds.rename({'created_at': 'tweet date'}, axis=1)
-    if filter and filter != '':
-        str_w_discard = preds['tweet'].str.contains(filter)
-        preds = preds[str_w_discard]
-        preds = preds.reset_index(drop=True)
     twitter_link_list = [link for link in preds['URL']]
     print('Total tweets predicted:', len(preds))
     return preds, twitter_link_list
@@ -519,8 +533,8 @@ def resource_predictions(path, filename, p_input, p_feature, score, savefile):
     preds = preds.drop_duplicates(['Description'], keep='last')
     preds = preds.loc[preds['Description'] != '']
     preds = preds.loc[preds['Prediction'] == score]
-    preds = preds[~preds.URL.str.contains('|'.join(discard))]
-    preds = preds[~preds.Title.str.contains('|'.join(discard))]
+    preds = preds[~preds.URL.str.contains('|'.join(url_discard))]
+    preds = preds[~preds.Title.str.contains('|'.join(title_discard))]
     preds = preds.sort_values(by='Score', ascending=False).reset_index(drop=True)
     preds.to_csv(f'{path}LOGREG_RELEVANCE/PREDICTIONS/{savefile}.csv')
     return preds

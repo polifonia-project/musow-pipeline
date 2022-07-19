@@ -1,4 +1,4 @@
-from PYTHON_FILES.pipeline_functions import *
+from musow_pipeline.pipeline_functions import *
 
 class LogRegSearches(object):
 
@@ -23,8 +23,8 @@ class LogRegSearches(object):
     def tweets_to_classify(folder, filetype):
         return tweets_to_classify(folder, filetype)
 
-    def predict_twitter(path, filename, p_input, p_feature, score, filter=None):
-        return twitter_predictions(path, filename, p_input, p_feature, score, filter=None)
+    def predict_twitter(path, filename, p_input, p_feature, score):
+        return twitter_predictions(path, filename, p_input, p_feature, score)
 
     def predict_resource(path, filename, p_input, p_feature, score, savefile):
         return resource_predictions(path, filename, p_input, p_feature, score, savefile)
